@@ -1,0 +1,16 @@
+Index: src/main/java/org/example/Model/Post.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.Model;\r\n\r\nimport jakarta.validation.constraints.NotNull;\r\nimport lombok.Data;\r\n\r\n@Data\r\npublic class Post {\r\n    @NotNull\r\n    private Long id;\r\n    private String title;\r\n    private String content;\r\n    @NotNull\r\n    private Long idAuthor;\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/Model/Post.java b/src/main/java/org/example/Model/Post.java
+--- a/src/main/java/org/example/Model/Post.java	
++++ b/src/main/java/org/example/Model/Post.java	
+@@ -7,6 +7,7 @@
+ public class Post {
+     @NotNull
+     private Long id;
++    @NotNull
+     private String title;
+     private String content;
+     @NotNull
