@@ -13,7 +13,6 @@ public class PhoneNumberValidator implements ConstraintValidator<PhoneNumberVali
 
     @Override
     public void initialize(PhoneNumberValidation constraintAnnotation) {
-
     }
 
     @Override
