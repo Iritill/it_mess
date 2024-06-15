@@ -3,10 +3,124 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
 
     <groupId>org.example</groupId>
     <artifactId>it_mess</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.googlecode.libphonenumber</groupId>
+            <!--
 
+            -->
+            <artifactId>libphonenumber</artifactId>
+            <version>8.12.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.zalando</groupId>
+            <!--
+logbook-spring-boot-starter - это удобная библиотека Spring Boot,
+которая упрощает использование Logbook, библиотеки для логирования
+HTTP-запросов и ответов.
+            -->
+            <artifactId>logbook-spring-boot-starter</artifactId>
+            <version>3.7.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <!--
+spring-boot-starter-web - это один из самых
+важных стартовых модулей в экосистеме Spring Boot,
+ который предоставляет все необходимое для создания веб-приложений.
+ Он включает в себя широкий набор зависимостей и конфигураций,
+ которые позволяют вам быстро и легко начать разработку.
+            -->
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <!--
+spring-boot-starter-validation - это стартовый модуль Spring Boot,
+который обеспечивает удобный способ настройки валидации данных в
+ваших приложениях. Он упрощает интеграцию библиотеки javax.validation
+(JSR-303) и делает валидацию более доступной для разработчиков.
+            -->
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <!--
+Lombok - это библиотека Java, которая значительно упрощает
+работу с Java-кодом, автоматически генерируя шаблонный код,
+который обычно приходится писать вручную.
+            -->
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <!--
+spring-boot-starter-data-jpa — это стартовый зависимость в
+Spring Boot, которая предоставляет все необходимое для работы
+с JPA (Java Persistence API) в вашем приложении.
+            -->
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <!--
+ H2 Database  -  это  отличный  инструмент  для  разработки  и
+ тестирования  Java-приложений,  встраиваемых  приложений  и
+ для  использования  в  качестве  временной  базы  данных.
+ Она  быстро,  проста  в  использовании  и  бесплатна,  но
+ не  подходит  для  работы  с  большими  масштабами  данных  и
+ не  предоставляет  все  возможности  других  СУБД.
+            -->
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <!--
+spring-boot-starter-test является необходимой зависимостью
+для любого проекта Spring Boot, которая упрощает процесс
+тестирования и обеспечивает все необходимые инструменты для
+создания надежных и качественных приложений.
+            -->
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>compile</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
