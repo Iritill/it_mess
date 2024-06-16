@@ -1,4 +1,4 @@
-package org.example.entity.subEntity;
+package org.example.entity.user;
 
 public enum AccessRights {
     USER,

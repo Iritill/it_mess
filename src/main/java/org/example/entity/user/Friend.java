@@ -1,12 +1,16 @@
-package org.example.entity;
+package org.example.entity.user;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import lombok.Data;
 import org.example.annotations.GoodPassword;
 import org.example.annotations.PhoneNumberValidation;
-import org.example.entity.subEntity.AccessRights;
 
-public class User {
+@Data
+public class Friend {
+    @NotNull
+    @Positive
     private Long id;
     private String name;
     @NotNull

@@ -5,7 +5,7 @@ import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.example.annotations.PhoneNumberValidation;
-import org.example.entity.subEntity.PhoneNumber;
+import org.example.entity.user.PhoneNumber;
 
 
 
@@ -21,7 +21,9 @@ public class PhoneNumberValidator implements ConstraintValidator<PhoneNumberVali
             return false;
         }
         try{
+            //Библиотека предоставляет служебный класс, PhoneNumberUtil, который предоставляет несколько методов для работы с телефонными номерами.
             PhoneNumberUtil phoneNumberUtil = PhoneNumberUtil.getInstance();
+            //isValidNumber выполняет полную проверку, используя префикс, а также информацию о длине
             return phoneNumberUtil.isValidNumber(phoneNumberUtil.parse(phoneNumber.getValue(), phoneNumber.getLocale()));
         }
         catch (NumberParseException e){

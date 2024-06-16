@@ -1,4 +1,4 @@
-package org.example.entity.subEntity;
+package org.example.entity.user;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
